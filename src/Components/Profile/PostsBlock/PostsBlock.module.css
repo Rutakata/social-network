@@ -1,0 +1,16 @@
+div.comment {
+    padding-left: 10px;
+}
+form{
+    margin-bottom: 30px;
+}
+button.sendPost {
+    width: 100px;
+    height: 25px;
+    margin-left: 10px;
+}
+textarea.enterPost {
+    margin-left: 10px;
+    width: 200px;
+    height: 75px;
+}

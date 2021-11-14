@@ -1,0 +1,7 @@
+div.selectedUsers {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+div.selectedUsers a.activeLink {
+    color: cornflowerblue;
+}

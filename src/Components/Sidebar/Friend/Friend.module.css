@@ -1,0 +1,17 @@
+img.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+span.username {
+    margin-left: 10px;
+    font-size: 20px;
+    font-family: 'Merriweather', serif;
+}
+span.status {
+    margin-left: 30px;
+    font-family: 'Merriweather', serif;
+    font-size: 14px;
+}

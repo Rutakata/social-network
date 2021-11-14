@@ -1,0 +1,11 @@
+aside.content {
+    /*width: 20%;
+    float: left;*/
+    grid-area: s;
+}
+
+aside.content h1 {
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    margin: 20px 0 0 0;
+}

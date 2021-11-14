@@ -1,5 +1,5 @@
 import PostsBlock from "./PostsBlock";
-import {addNewPostActionCreator, updatePostMessageActionCreator} from "../../../Redux/profileReducer";
+import {addNewPost, updatePostMessage} from "../../../Redux/profileReducer";
 import {connect} from "react-redux";
 
 
@@ -10,17 +10,6 @@ let mapStateToProps = (state) => {
     }
 }
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-        updatePostMessage: (postText) => {
-            dispatch(updatePostMessageActionCreator(postText))
-        },
-        addNewPost: () => {
-            dispatch(addNewPostActionCreator())
-        }
-    }
-}
-
-const PostsBlockContainer = connect(mapStateToProps, mapDispatchToProps)(PostsBlock)
+const PostsBlockContainer = connect(mapStateToProps, {addNewPost, updatePostMessage})(PostsBlock)
 
 export default PostsBlockContainer

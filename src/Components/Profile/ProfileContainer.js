@@ -1,9 +1,9 @@
 import React from "react";
 import Profile from "./Profile";
-import {setUserProfile} from "../../Redux/profileReducer";
+import {setUserProfile, updatePostMessage, addNewPost} from "../../Redux/profileReducer";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
-import {getUserById, usersApi} from "../../API/api";
+import {usersApi} from "../../API/api";
 
 
 class ProfileContainer extends React.Component {

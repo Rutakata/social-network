@@ -35,13 +35,13 @@ const chatsReducer = (state = initialState, action) => {
     }
 }
 
-export const sendNewMessageActionCreator = () => {
+export const sendNewMessage = () => {
     return {
         type: SEND_NEW_MESSAGE
     }
 }
 
-export const updateMessageActionCreator = (newMess) => {
+export const updateMessage = (newMess) => {
     return {
         type: UPDATE_MESSAGE,
         newMessage: newMess

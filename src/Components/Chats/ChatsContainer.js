@@ -3,6 +3,7 @@ import {sendNewMessage, updateMessage} from "../../Redux/chatsReducer";
 import {connect} from "react-redux";
 import React from "react";
 import {withAuthRedirect} from "../../HOC/withAuthRedirect";
+import {compose} from "redux";
 
 
 let mapStateToProps = (state) => {
@@ -13,8 +14,6 @@ let mapStateToProps = (state) => {
     }
 }
 
-let AuthRedirect = withAuthRedirect(Chats)
-
-const ChatsContainer = connect(mapStateToProps, {sendNewMessage, updateMessage})(AuthRedirect)
+let ChatsContainer = compose(withAuthRedirect, connect(mapStateToProps, {sendNewMessage, updateMessage}))(Chats)
 
 export default ChatsContainer

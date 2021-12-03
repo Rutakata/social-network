@@ -2,6 +2,7 @@ aside.content {
     /*width: 20%;
     float: left;*/
     grid-area: s;
+    border-right: 1px solid black;
 }
 
 aside.content h1 {

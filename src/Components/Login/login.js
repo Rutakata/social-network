@@ -1,10 +1,17 @@
 import React from "react";
+import LoginReduxForm from "./LoginForm";
+import style from "./Login.module.css"
 
 
-const Login = (props) => {
+const Login = () => {
+    const onSubmit = (formData) => {
+        console.log(formData)
+    }
+
     return (
-        <div>
-            <h1>Login page</h1>
+        <div className={style.loginPageBody}>
+            <h1>Login</h1>
+            <LoginReduxForm onSubmit={onSubmit}/>
         </div>
     )
 }

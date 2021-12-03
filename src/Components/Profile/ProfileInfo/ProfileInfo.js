@@ -16,7 +16,7 @@ let ProfileInfo = (props) => {
             <h1>{props.profileInfo.fullName}</h1>
             <img src={props.profileInfo.photos.large ? props.profileInfo.photos.large: userPhoto} className={style.avatar}/>
             <p>{!props.profileInfo.aboutMe ? "i am empty" : props.profileInfo.aboutMe}</p>
-            <ProfileStatus status={"Libera me from hell"}/>
+            <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
         </div>
     )
 }

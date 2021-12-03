@@ -13,14 +13,23 @@ export const usersApi = {
     getUsers(currentPage = 1, pageSize = 6) {
         return instance.get(`users?page=${currentPage}&count=${pageSize}`).then(response => response.data)
     },
-    getUserById(userId) {
-        return instance.get(`profile/${userId}`)
-    },
     followUserReq(id) {
         return instance.post(`follow/${id}`)
     },
     unfollowUserReq(id) {
         return instance.delete(`follow/${id}`)
+    }
+}
+
+export const profileApi = {
+    getUserById(userId) {
+        return instance.get(`profile/${userId}`)
+    },
+    getUserStatus(userId) {
+        return instance.get(`profile/status/${userId}`)
+    },
+    updateStatus(status) {
+        return instance.put(`profile/status`, {status})
     }
 }
 

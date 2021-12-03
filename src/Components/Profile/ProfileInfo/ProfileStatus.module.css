@@ -1,0 +1,15 @@
+.status {
+    width: 400px;
+    height: 100px;
+    background-color: gainsboro;
+    padding: 0;
+    margin-left: 10px;
+    border-radius: 20px;
+    padding-top: 20px;
+}
+.status span {
+    margin-left: 20px;
+}
+.statusEdit {
+    margin-left: 20px;
+}

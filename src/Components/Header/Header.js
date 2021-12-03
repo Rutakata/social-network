@@ -4,6 +4,7 @@ import style from "./Header.module.css"
 const Header = (props) => {
     return(
         <header>
+
             <img src="https://www.pngkit.com/png/full/634-6347611_image-bleach-logo.png" alt="logo"/>
             <ul>
                 <li><NavLink to="/profile" className={style.headerMenu} activeClassName={style.activeLink}>Моя сторінка</NavLink></li>

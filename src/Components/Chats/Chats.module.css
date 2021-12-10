@@ -1,9 +1,7 @@
 div.content {
-    width: 79%;
     display: grid;
     grid-template-areas: "users chats";
     grid-template-columns: 20% 1fr;
-    border-left: 1px solid black;
     padding-left: 10px;
 }
 div.users {

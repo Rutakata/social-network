@@ -2,7 +2,7 @@ import Message from "./Message/Message";
 import React from "react";
 import UsersChat from "./UsersChat/UsersChat";
 import style from "./Chats.module.css"
-import {Redirect} from "react-router-dom";
+import AddMessageReduxForm from "./UsersChat/AddMessageForm";
 
 
 const Chats = (props) => {
@@ -13,15 +13,8 @@ const Chats = (props) => {
         return (<Message message={m.message}/>)
     })
 
-    let newMessageText = React.createRef()
-
-    let onMessageChange = () => {
-        let newMessage = newMessageText.current.value
-        props.updateMessage(newMessage)
-    }
-
-    if (!props.isAuth) {
-        return <Redirect to="/login" />
+    let sendNewMessage = (values) => {
+        props.sendNewMessage(values.newMessage)
     }
 
     return (
@@ -31,15 +24,11 @@ const Chats = (props) => {
             </div>
             <div className={style.userChat}>
                 {throwMessage}
-                <textarea onChange={onMessageChange} className={style.messageText}
-                          ref={newMessageText} value={props.newChatMessage}/>
-                <button className={style.sendMessage} onClick={props.sendNewMessage}>Написати</button>
+                <AddMessageReduxForm onSubmit={sendNewMessage}/>
             </div>
         </div>
 
     )
-
-
 }
 
 export default Chats

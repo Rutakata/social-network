@@ -1,24 +1,22 @@
 import React from "react";
 import PostItem from "./PostItem/PostItem";
-import style from "./PostsBlock.module.css";
-
+import PostReduxForm from "./PostForm";
 
 const PostsBlock = (props) => {
     let throwPostMessages = props.postMessages.map(ms => {return (<PostItem message={ms.message}/>)})
 
     let newPostText = React.createRef()
 
-    let onPostChange = () => {
-        let postText = newPostText.current.value
-        props.updatePostMessage(postText)
+    let onPostChange = (values) => {
+
+        props.addNewPost(values.postText)
     }
 
     return (
         <div>
             <p><b>Коментарі</b></p>
-                <textarea onChange={onPostChange} className={style.enterPost}
-                          ref={newPostText} value={props.newPostMessage}/><br/>
-                <button className={style.sendPost} onClick={props.addNewPost}>Написати</button>
+            <PostReduxForm onSubmit={onPostChange}/>
+
             {throwPostMessages}
         </div>
     )

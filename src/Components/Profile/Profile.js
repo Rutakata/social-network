@@ -9,7 +9,7 @@ const Profile = (props) => {
         <div className={style.content}>
             <ProfileInfo profileInfo={props.profileInfo} status={props.status} updateStatus={props.updateStatus}/>
             <div className={style.commentsBlock}>
-                <PostsBlockContainer />
+                <PostsBlockContainer onSubmit={props.onSubmit}/>
             </div>
         </div>
     )

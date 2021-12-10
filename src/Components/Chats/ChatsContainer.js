@@ -1,5 +1,5 @@
 import Chats from "./Chats";
-import {sendNewMessage, updateMessage} from "../../Redux/chatsReducer";
+import {sendNewMessage} from "../../Redux/chatsReducer";
 import {connect} from "react-redux";
 import React from "react";
 import {withAuthRedirect} from "../../HOC/withAuthRedirect";
@@ -14,6 +14,6 @@ let mapStateToProps = (state) => {
     }
 }
 
-let ChatsContainer = compose(withAuthRedirect, connect(mapStateToProps, {sendNewMessage, updateMessage}))(Chats)
+let ChatsContainer = compose(withAuthRedirect, connect(mapStateToProps, {sendNewMessage}))(Chats)
 
 export default ChatsContainer

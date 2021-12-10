@@ -1,4 +1,4 @@
-import {followUser, unfollowUser, setCurrentPage, toggleFollowingProgress, getUsers} from "../../Redux/usersReducer";
+import {followUser, unfollowUser, setCurrentPage, getUsers} from "../../Redux/usersReducer";
 import {connect} from "react-redux";
 import React from "react";
 import Users from "./Users";

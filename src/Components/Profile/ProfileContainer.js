@@ -18,15 +18,15 @@ class ProfileContainer extends React.Component {
         this.props.getUserProfile(userId)
         this.props.getStatus(userId)
     }
+    onSubmit(formData) {
+        console.log(formData)
+    }
 
     render() {
-        if (!this.props.isAuth) {
-            return <Redirect to="/login" />
-        }
         return (
             <div>
                 <Profile {...this.props} profileInfo={this.props.profileInfo} status={this.props.status}
-                         updateStatus={this.props.updateStatus}/>
+                         updateStatus={this.props.updateStatus} onSubmit={this.onSubmit}/>
             </div>
         )
     }

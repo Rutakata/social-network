@@ -1,5 +1,5 @@
 import PostsBlock from "./PostsBlock";
-import {addNewPost, updatePostMessage} from "../../../Redux/profileReducer";
+import {addNewPost} from "../../../Redux/profileReducer";
 import {connect} from "react-redux";
 
 
@@ -10,6 +10,6 @@ let mapStateToProps = (state) => {
     }
 }
 
-const PostsBlockContainer = connect(mapStateToProps, {addNewPost, updatePostMessage})(PostsBlock)
+const PostsBlockContainer = connect(mapStateToProps, {addNewPost})(PostsBlock)
 
 export default PostsBlockContainer

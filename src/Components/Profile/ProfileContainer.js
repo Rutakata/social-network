@@ -2,9 +2,10 @@ import React from "react";
 import Profile from "./Profile";
 import {getUserProfile, getStatus, updateStatus} from "../../Redux/profileReducer";
 import {connect} from "react-redux";
-import {Redirect, withRouter} from "react-router-dom";
+import {withRouter} from "react-router-dom";
 import {withAuthRedirect} from "../../HOC/withAuthRedirect";
 import {compose} from "redux";
+import Preloader from "../../Common/Preloader/preloader";
 
 
 class ProfileContainer extends React.Component {

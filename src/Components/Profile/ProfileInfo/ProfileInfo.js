@@ -5,12 +5,6 @@ import userPhoto from "../../../Assets/Images/user.jpg"
 import ProfileStatus from "./ProfileStatus";
 
 let ProfileInfo = (props) => {
-    if (!props.profileInfo){
-        return (
-            <Preloader />
-        )
-    }
-
     return (
         <div>
             <h1>{props.profileInfo.fullName}</h1>

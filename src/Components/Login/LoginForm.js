@@ -1,8 +1,8 @@
 import React from "react";
 import {reduxForm, Field} from "redux-form";
 import style from "./Login.module.css"
-import { Input } from "../../Common/FormControls/FormControls";
-import { required } from "../../utils/validators/validators";
+import {Input} from "../../Common/FormControls/FormControls";
+import {required} from "../../utils/validators/validators";
 
 
 const LoginForm = (props) => {
@@ -17,8 +17,12 @@ const LoginForm = (props) => {
                        validate={[required]}/>
             </div>
             <div className={style.fieldContainer}>
-                <Field type="checkbox" name="rememberMe" component="input" /> Remember me
+                <Field type="checkbox" name="rememberMe" component="input"/> Remember me
             </div>
+            {props.error && <div className={style.formError}>
+                {props.error}
+            </div>
+            }
             <div>
                 <button className={style.signIn}>Sign in</button>
             </div>
@@ -26,6 +30,6 @@ const LoginForm = (props) => {
     )
 }
 
-const LoginReduxForm = reduxForm({ form: 'login' })(LoginForm)
+const LoginReduxForm = reduxForm({form: 'login'})(LoginForm)
 
 export default LoginReduxForm

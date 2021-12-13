@@ -10,7 +10,7 @@ const Header = (props) => {
                 <li><NavLink to="/profile" className={style.headerMenu} activeClassName={style.activeLink}>Моя сторінка</NavLink></li>
                 <li><NavLink to="/messages" className={style.headerMenu} activeClassName={style.activeLink}>Повідомлення</NavLink></li>
                 <li><NavLink to="/users" className={style.headerMenu} activeClassName={style.activeLink}>Користувачі</NavLink></li>
-                <li>Налаштування</li>
+                <li><NavLink to="/settings" className={style.headerMenu} activeClassName={style.activeLink}>Налаштування</NavLink></li>
                 {props.isAuth ?
                     <li className = {style.headerMenu}>{props.login}</li>:
                     <li><NavLink to="/login" className={style.headerMenu} activeClassName={style.activeLink}>Login</NavLink></li>

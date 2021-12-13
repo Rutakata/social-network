@@ -6,6 +6,7 @@ import ChatsContainer from "./Components/Chats/ChatsContainer";
 import ProfileContainer from "./Components/Profile/ProfileContainer";
 import HeaderContainer from "./Components/Header/HeaderContainer";
 import Login from "./Components/Login/login";
+import Settings from "./Components/Settings/Settings";
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                 <Route path="/messages" render={() => <ChatsContainer />}/>
                 <Route path="/users" render={() => <UsersContainer />}/>
                 <Route path="/login" render={() => <Login />}/>
+                <Route path="/settings" render={() => <Settings />} />
             </div>
         </div>
     );

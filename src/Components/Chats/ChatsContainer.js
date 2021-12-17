@@ -1,7 +1,6 @@
 import Chats from "./Chats";
 import {sendNewMessage} from "../../Redux/chatsReducer";
 import {connect} from "react-redux";
-import React from "react";
 import {withAuthRedirect} from "../../HOC/withAuthRedirect";
 import {compose} from "redux";
 

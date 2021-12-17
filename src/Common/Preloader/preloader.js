@@ -8,7 +8,7 @@ const preloaderStyle = {
 }
 
 let Preloader = () => {
-    return <img src={loader} style={preloaderStyle} />
+    return <img src={loader} style={preloaderStyle} alt={""}/>
 }
 
 export default Preloader

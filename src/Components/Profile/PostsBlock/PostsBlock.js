@@ -2,24 +2,24 @@ import React from "react";
 import PostItem from "./PostItem/PostItem";
 import PostReduxForm from "./PostForm";
 
-const PostsBlock = (props) => {
-    let throwPostMessages = props.postMessages.map(ms => {return (<PostItem message={ms.message}/>)})
+const PostsBlock = React.memo((props) => {
+    let throwPostMessages = props.postMessages.map(ms => {
+        return (<PostItem message={ms.message}/>)
+    })
 
-    let newPostText = React.createRef()
-
-    let onPostChange = (values) => {
-
+    const onPostChange = (values) => {
         props.addNewPost(values.postText)
     }
-
+    debugger
     return (
         <div>
             <p><b>Коментарі</b></p>
-            <PostReduxForm onSubmit={onPostChange}/>
+
+            {props.showPostForm ? <PostReduxForm onSubmit={onPostChange}/>: null}
 
             {throwPostMessages}
         </div>
     )
-}
+})
 
 export default PostsBlock

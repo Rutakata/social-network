@@ -1,6 +1,6 @@
 import React from "react";
 import './App.css';
-import {Route} from "react-router-dom";
+import {BrowserRouter, Route} from "react-router-dom";
 import SideBar from "./Components/Sidebar/Sidebar";
 import UsersContainer from "./Components/Users/UsersContainer";
 import ChatsContainer from "./Components/Chats/ChatsContainer";
@@ -8,9 +8,12 @@ import ProfileContainer from "./Components/Profile/ProfileContainer";
 import HeaderContainer from "./Components/Header/HeaderContainer";
 import Login from "./Components/Login/login";
 import Settings from "./Components/Settings/Settings";
-import {connect} from "react-redux";
+import {connect, Provider} from "react-redux";
 import {initializeApp} from "./Redux/appReducer";
 import Preloader from "./Common/Preloader/preloader";
+import {compose} from "redux";
+import {withRouter} from "react-router";
+import store from "./Redux/reduxStore";
 
 
 class App extends React.Component {
@@ -43,4 +46,16 @@ let mapStateToProps = (state) => ({
     initialized: state.app.initialized
 })
 
-export default connect(mapStateToProps, {initializeApp})(App);
+let AppContainer =  compose(withRouter, connect(mapStateToProps, {initializeApp}))(App);
+
+let FullAppComponent = () => {
+    return (
+        <BrowserRouter>
+            <Provider store={store}>
+                <AppContainer />
+            </Provider>
+        </BrowserRouter>
+    )
+}
+
+export default FullAppComponent

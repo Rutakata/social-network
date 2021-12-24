@@ -1,19 +1,12 @@
 import React from 'react';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import store from "./Redux/reduxStore";
-import {BrowserRouter} from "react-router-dom";
 import ReactDOM from "react-dom";
-import {Provider} from "react-redux";
+import FullAppComponent from "./App";
 
 
 ReactDOM.render(
-    <BrowserRouter>
-        <Provider store={store}>
-            <App/>
-        </Provider>
-    </BrowserRouter>, document.getElementById('root'));
+    <FullAppComponent/>, document.getElementById('root'));
 
 
 // If you want to start measuring performance in your app, pass a function

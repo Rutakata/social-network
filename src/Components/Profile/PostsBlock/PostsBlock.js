@@ -10,7 +10,7 @@ const PostsBlock = React.memo((props) => {
     const onPostChange = (values) => {
         props.addNewPost(values.postText)
     }
-    debugger
+
     return (
         <div>
             <p><b>Коментарі</b></p>

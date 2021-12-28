@@ -1,0 +1,19 @@
+.currentPage {
+    font-weight: bold;
+}
+.pageList {
+    text-align: center;
+    margin-top: 10px;
+}
+.pageList span {
+    cursor: pointer;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.navigationButton {
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 0px 5px;
+}

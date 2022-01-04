@@ -2,8 +2,6 @@ import React from "react";
 import './App.css';
 import {BrowserRouter, Route} from "react-router-dom";
 import SideBar from "./Components/Sidebar/Sidebar";
-import UsersContainer from "./Components/Users/UsersContainer";
-import ChatsContainer from "./Components/Chats/ChatsContainer";
 import ProfileContainer from "./Components/Profile/ProfileContainer";
 import HeaderContainer from "./Components/Header/HeaderContainer";
 import Login from "./Components/Login/login";
@@ -14,6 +12,9 @@ import Preloader from "./Common/Preloader/preloader";
 import {compose} from "redux";
 import {withRouter} from "react-router";
 import store from "./Redux/reduxStore";
+import withLazyLoading from "./HOC/witLazyLoading";
+const ChatsContainer = React.lazy(() => import("./Components/Chats/ChatsContainer"));
+const UsersContainer = React.lazy(() => import("./Components/Users/UsersContainer"));
 
 
 class App extends React.Component {
@@ -32,8 +33,12 @@ class App extends React.Component {
                 <SideBar/>
                 <div className="appContent">
                     <Route path="/profile/:userId?" render={() => <ProfileContainer/>}/>
-                    <Route path="/messages" render={() => <ChatsContainer/>}/>
-                    <Route path="/users" render={() => <UsersContainer/>}/>
+                    <Route path="/messages" render={() => {
+                        return withLazyLoading(ChatsContainer)
+                    }}/>
+                    <Route path="/users" render={() => {
+                        return withLazyLoading(UsersContainer)
+                    }}/>
                     <Route path="/login" render={() => <Login/>}/>
                     <Route path="/settings" render={() => <Settings/>}/>
                 </div>
@@ -46,13 +51,13 @@ let mapStateToProps = (state) => ({
     initialized: state.app.initialized
 })
 
-let AppContainer =  compose(withRouter, connect(mapStateToProps, {initializeApp}))(App);
+let AppContainer = compose(withRouter, connect(mapStateToProps, {initializeApp}))(App);
 
 let FullAppComponent = () => {
     return (
         <BrowserRouter>
             <Provider store={store}>
-                <AppContainer />
+                <AppContainer/>
             </Provider>
         </BrowserRouter>
     )

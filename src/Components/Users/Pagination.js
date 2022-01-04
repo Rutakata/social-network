@@ -16,7 +16,6 @@ const Pagination = ({totalUsersCount, pageSize, onPageChanged, currentPage}) => 
     let leftPortionBorder = (portionNumber - 1) * portionSize + 1
     let rightPortionBorder = portionNumber * portionSize
 
-    debugger
     return (
         <div className={style.pageList}>
             {

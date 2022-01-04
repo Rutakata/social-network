@@ -12,22 +12,10 @@
 .secondPart {
     display: inline-block;
 }
-.userName {
-}
-.userLocation {
-}
 .followState {
     width: 70px;
     height: 20px;
 }
-.currentPage {
-    font-weight: bold;
-}
-.pageList {
-    text-align: center;
-}
-.pageList span {
-    cursor: pointer;
-    margin-left: 2px;
-    margin-right: 2px;
+.usersPageBody {
+    margin-bottom: 30px;
 }

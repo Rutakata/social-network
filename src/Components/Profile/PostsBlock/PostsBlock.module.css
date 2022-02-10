@@ -7,10 +7,21 @@ form{
 button.sendPost {
     width: 100px;
     height: 25px;
-    margin-left: 10px;
+    background-color: #545160;
+    border-radius: 10px;
+    border: none;
+    color: white;
 }
 textarea.enterPost {
-    margin-left: 10px;
     width: 200px;
     height: 75px;
+}
+div.postsContent {
+    margin: 0;
+    padding: 0;
+}
+h2 {
+    width: 80%;
+    text-align: center;
+    padding: 0;
 }

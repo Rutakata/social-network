@@ -12,10 +12,11 @@ const Profile = (props) => {
         )
     }
     return (
-        <div className={style.content}>
-            <ProfileInfo profileInfo={props.profileInfo} status={props.status} updateStatus={props.updateStatus}/>
+        <div className={style.userPage}>
+            <ProfileInfo profileInfo={props.profileInfo} status={props.status} updateStatus={props.updateStatus}
+                         changeStatus={props.changeStatus}/>
             <div className={style.commentsBlock}>
-                <PostsBlockContainer showPostForm={props.showPostForm}/>
+                <PostsBlockContainer showPostForm={props.showPostForm} userFullName={props.profileInfo.fullName}/>
             </div>
         </div>
     )

@@ -1,12 +1,15 @@
 import React from "react";
-import style from "../PostsBlock.module.css";
+import style from "./PostItem.module.css";
 
 let Post = (props) => {
     return (
-        <div className={style.comment}>
-            Me <br/>
-            {props.message}
+        <div>
+            <div className={style.userComment}>
+                <span className={style.username}>{props.userFullName}</span><br/>
+                <span>{props.message}</span>
+            </div><br/>
         </div>
+
     )
 }
 

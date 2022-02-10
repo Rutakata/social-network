@@ -1,10 +1,11 @@
 import React from "react";
 import PostItem from "./PostItem/PostItem";
 import PostReduxForm from "./PostForm";
+import style from "./PostsBlock.module.css"
 
 const PostsBlock = React.memo((props) => {
     let throwPostMessages = props.postMessages.map(ms => {
-        return (<PostItem message={ms.message}/>)
+        return (<PostItem message={ms.message} userFullName={props.userFullName}/>)
     })
 
     const onPostChange = (values) => {
@@ -12,8 +13,8 @@ const PostsBlock = React.memo((props) => {
     }
 
     return (
-        <div>
-            <p><b>Коментарі</b></p>
+        <div className={style.postsContent}>
+            <h2>Думки</h2>
 
             {props.showPostForm ? <PostReduxForm onSubmit={onPostChange}/>: null}
 

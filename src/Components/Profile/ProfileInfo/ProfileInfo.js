@@ -1,15 +1,27 @@
 import React from "react";
-import style from "../Profile.module.css";
-import userPhoto from "../../../Assets/Images/user.jpg"
+import style from "./ProfileInfo.module.css";
+import userPhoto from "../../../Assets/Images/userLogo.png"
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 let ProfileInfo = (props) => {
     return (
         <div>
-            <h1>{props.profileInfo.fullName}</h1>
-            <img src={props.profileInfo.photos.large ? props.profileInfo.photos.large: userPhoto} className={style.avatar} alt={""}/>
-            <p>{!props.profileInfo.aboutMe ? "i am empty" : props.profileInfo.aboutMe}</p>
-            <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
+            <div className={style.content}>
+                <div className={style.userLogo}>
+                    <img src={props.profileInfo.photos.large ? props.profileInfo.photos.large: userPhoto} className={style.avatar} alt={""}/>
+                </div>
+                <div className={style.userInfo}>
+                    <h1 className={style.username}>{props.profileInfo.fullName}</h1>
+                    <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus} changeStatus={props.changeStatus}/>
+                </div>
+            </div>
+            {
+                !props.profileInfo.aboutMe ? null: <div className={style.aboutMe}>
+                    <h2>About me</h2>
+                    <p>- {props.profileInfo.aboutMe}</p>
+                </div>
+            }
+
         </div>
     )
 }

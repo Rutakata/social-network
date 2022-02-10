@@ -10,6 +10,7 @@ import {getProfileInfo, getLoggedUserId, getStatusFromState} from "../../Redux/p
 
 class ProfileContainer extends React.Component {
     showPostForm = false
+    changeStatus = false
 
     componentDidMount() {
         let userId = this.props.match.params.userId
@@ -17,6 +18,7 @@ class ProfileContainer extends React.Component {
         if (!userId) {
             userId = this.props.loggedUserId
             this.showPostForm = true
+            this.changeStatus = true
         }
 
         this.props.getUserProfile(userId)
@@ -27,7 +29,7 @@ class ProfileContainer extends React.Component {
         return (
             <div>
                 <Profile {...this.props} profileInfo={this.props.profileInfo} status={this.props.status}
-                         updateStatus={this.props.updateStatus} showPostForm={this.showPostForm}/>
+                         updateStatus={this.props.updateStatus} showPostForm={this.showPostForm} changeStatus={this.changeStatus}/>
             </div>
         )
     }
